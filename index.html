@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Шары рядом — гелиевые шары с доставкой в Новосибирске | ТЦ Золотая Нива</title>
+  <meta name="description" content="Гелиевые шары, композиции, цифры и шары с надписями в Новосибирске. ТЦ «Золотая Нива», ул. Бориса Богаткова, 239, павильон 134. Рейтинг 4.8 в 2ГИС. Заказ: 8 (999) 464-49-40." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Шары рядом — гелиевые шары в Новосибирске 🎈" />
+  <meta property="og:description" content="Композиции, цифры и шары с надписями. Доставка день в день. Рейтинг 4.8 в 2ГИС." />
+  <!-- <meta property="og:image" content="https://ваш-сайт/og-cover.png" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Шары рядом",
+    "description": "Праздничное оформление шарами, гелиевые шары, композиции и сувениры. Розница и опт.",
+    "telephone": "+79994644940",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Бориса Богаткова, 239, павильон 134, 1 этаж",
+      "addressLocality": "Новосибирск",
+      "addressCountry": "RU"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 55.038072, "longitude": 82.97752 },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "103" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Можно ли заказать шары день в день?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да. По отзывам клиентов композиции привозили уже через 1,5 часа после заказа." } },
+      { "@type": "Question", "name": "Как долго летают гелиевые шары?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Обычные — до суток, с обработкой специальным составом — 3–4 недели и дольше." } },
+      { "@type": "Question", "name": "Можно ли заказать шары с именем или надписью?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да, делаем шары с именем, фамилией и поздравительными надписями." } },
+      { "@type": "Question", "name": "Где вы находитесь?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ТЦ «Золотая Нива», 1 этаж, ул. Бориса Богаткова, 239, павильон 134, Новосибирск." } },
+      { "@type": "Question", "name": "Какие способы оплаты у вас есть?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Наличными, банковской картой, переводом и по QR-коду. Розница и опт." } }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0f1023;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-strong: rgba(255, 255, 255, 0.09);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #f2f2f8;
+      --muted: #a0a3c0;
+      --pink: #ff4d8d;
+      --orange: #ff8a3d;
+      --violet: #a855f7;
+      --gold: #ffd166;
+      --green: #25d366;
+      --accent3: #38bdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      line-height: 1.6; color: var(--text);
+      background: var(--bg); overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== Живой фон ===== */
+    .bg-blobs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .35; animation: drift 22s ease-in-out infinite alternate; }
+    .blob-1 { width: 460px; height: 460px; background: #a855f7; top: -140px; left: -140px; }
+    .blob-2 { width: 420px; height: 420px; background: #ec4899; top: 30%; right: -160px; animation-delay: -6s; }
+    .blob-3 { width: 380px; height: 380px; background: #38bdf8; bottom: -120px; left: 25%; animation-delay: -12s; }
+    @keyframes drift {
+      0%   { transform: translate(0,0) scale(1); }
+      50%  { transform: translate(60px,-40px) scale(1.12); }
+      100% { transform: translate(-40px,50px) scale(.95); }
+    }
+    .balloon {
+      position: fixed; bottom: -90px; font-size: 34px;
+      opacity: .35; z-index: 0; pointer-events: none;
+      filter: blur(0.5px);
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(0) rotate(-6deg); }
+      50%  { transform: translateY(-55vh) rotate(7deg); }
+      100% { transform: translateY(-115vh) rotate(-5deg); }
+    }
+    header, section, footer, .breadcrumbs-wrap, .view { position: relative; z-index: 1; }
+
+    /* ===== Шапка ===== */
+    header {
+      background: rgba(15, 16, 35, 0.7); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 0; }
+    .logo {
+      font-size: 25px; font-weight: 900; white-space: nowrap;
+      background: linear-gradient(90deg, var(--pink), var(--violet), var(--accent3));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    nav ul { display: flex; gap: 20px; flex-wrap: wrap; }
+    nav a { font-weight: 600; font-size: .95rem; color: var(--muted); position: relative; transition: color .25s; }
+    nav a:hover { color: var(--text); }
+    nav a::after {
+      content: ''; position: absolute; left: 0; bottom: -4px;
+      width: 0; height: 3px; border-radius: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--violet));
+      transition: width .25s;
+    }
+    nav a:hover::after { width: 100%; }
+    .rating-badge {
+      background: linear-gradient(135deg, var(--gold), #ff9f43);
+      color: #1c0f33; padding: 7px 15px; border-radius: 30px;
+      font-weight: 800; font-size: 14px; white-space: nowrap;
+      box-shadow: 0 4px 18px rgba(255,159,67,.35);
+    }
+
+    /* ===== Хлебные крошки ===== */
+    .breadcrumbs-wrap { padding: 18px 0 0; }
+    .breadcrumbs { font-size: .88rem; color: var(--muted); }
+    .breadcrumbs a { color: var(--accent3); font-weight: 600; }
+    .breadcrumbs a:hover { color: var(--pink); }
+    .breadcrumbs .sep { margin: 0 8px; color: rgba(255,255,255,.25); }
+
+    /* ===== Герой ===== */
+    .hero {
+      min-height: 82vh; display: flex; align-items: center;
+      text-align: center; padding: 60px 0;
+    }
+    .hero-kicker {
+      display: inline-block; background: var(--card);
+      border: 1px solid var(--border); color: var(--muted);
+      font-weight: 700; font-size: .85rem;
+      padding: 8px 18px; border-radius: 30px; margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 900; line-height: 1.15; margin-bottom: 8px; }
+    .hero h1 .accent {
+      background: linear-gradient(90deg, var(--pink), var(--orange), var(--violet));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero .handwritten { font-family: 'Caveat', cursive; font-size: clamp(1.4rem, 3vw, 2rem); color: var(--accent3); margin-bottom: 18px; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 640px; margin: 0 auto 32px; }
+    .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== Кнопки ===== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, var(--pink), var(--violet));
+      color: #fff; padding: 16px 34px; border: none; border-radius: 50px;
+      font-weight: 800; font-size: 1rem; font-family: inherit; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 26px rgba(168, 85, 247, .35);
+    }
+    .btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 36px rgba(236, 72, 153, .45); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); box-shadow: none; }
+    .btn-outline:hover { background: var(--card); }
+    .btn-wa { background: linear-gradient(135deg, var(--green), #128c7e); box-shadow: 0 8px 22px rgba(37,211,102,.3); }
+    .btn-white { background: #fff; color: #1c0f33; }
+
+    /* ===== Секции ===== */
+    section { padding: 74px 0; }
+    .section-title { text-align: center; font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 900; margin-bottom: 14px; }
+    .section-title .accent {
+      background: linear-gradient(90deg, var(--pink), var(--violet));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .section-sub { text-align: center; color: var(--muted); max-width: 560px; margin: 0 auto 44px; }
+
+    /* ===== Полоса фактов ===== */
+    .stats { padding: 34px 0; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;
+      background: var(--card); backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 22px; padding: 26px;
+    }
+    .stat { text-align: center; }
+    .stat b {
+      font-size: 1.7rem; font-weight: 900;
+      background: linear-gradient(90deg, var(--pink), var(--accent3));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat span { display: block; font-size: .85rem; color: var(--muted); }
+
+    /* ===== Услуги ===== */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .feature-card {
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      padding: 32px 26px; border-radius: 20px;
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+      position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--orange), var(--violet));
+      opacity: 0; transition: opacity .25s;
+    }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card:hover { transform: translateY(-8px); border-color: var(--violet); box-shadow: 0 18px 40px rgba(168, 85, 247, .2); }
+    .feature-icon {
+      width: 68px; height: 68px; display: flex; align-items: center; justify-content: center;
+      font-size: 32px; border-radius: 20px;
+      background: linear-gradient(135deg, rgba(236,72,153,.18), rgba(168,85,247,.18));
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .feature-card h3 { margin-bottom: 8px; font-weight: 800; }
+    .feature-card p { font-size: .93rem; color: var(--muted); }
+
+    /* ===== Оплата ===== */
+    .pay-banner {
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px dashed rgba(255,77,141,.4); border-radius: 20px;
+      padding: 26px 30px; display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap; font-weight: 700;
+      color: var(--text);
+    }
+    .pay-banner span { color: var(--pink); font-size: 1.4rem; }
+
+    /* ===== Галерея ===== */
+    .gallery-cta {
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 22px; padding: 50px 30px; text-align: center;
+    }
+    .gallery-cta .big-emoji { font-size: 52px; margin-bottom: 14px; }
+    .gallery-cta h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 10px; }
+    .gallery-cta p { color: var(--muted); max-width: 480px; margin: 0 auto 24px; }
+
+    /* ===== Отзывы ===== */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .review-card {
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 18px; padding: 28px;
+      transition: transform .25s, border-color .25s;
+    }
+    .review-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 10px; letter-spacing: 2px; }
+    .review-card p { font-style: italic; color: var(--muted); margin-bottom: 12px; font-size: .95rem; }
+    .review-card .author { font-weight: 800; color: var(--text); font-style: normal; }
+    .reviews-more { text-align: center; margin-top: 26px; }
+
+    /* ===== FAQ ===== */
+    .faq-item {
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 16px; margin-bottom: 14px; overflow: hidden;
+    }
+    .faq-item summary { font-weight: 800; cursor: pointer; padding: 18px 22px; list-style: none; position: relative; padding-right: 56px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; position: absolute; right: 20px; top: 50%;
+      transform: translateY(-50%);
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--violet));
+      color: #fff; font-weight: 900; font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .25s;
+    }
+    .faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+    .faq-item[open] summary { color: var(--pink); }
+    .faq-item .faq-answer { padding: 0 22px 18px; color: var(--muted); font-size: .95rem; }
+
+    /* ===== Карта ===== */
+    .map-wrap { border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 12px 34px rgba(0,0,0,.4); }
+    .map-wrap iframe { width: 100%; height: 420px; border: 0; display: block; filter: grayscale(.3) brightness(.9); }
+    .route-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 26px; }
+    .route-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .route-card .r-icon { font-size: 30px; margin-bottom: 10px; }
+    .route-card h3 { font-weight: 800; margin-bottom: 6px; }
+    .route-card p { color: var(--muted); font-size: .92rem; }
+
+    /* ===== Контакты ===== */
+    .contacts {
+      background: linear-gradient(135deg, rgba(168,85,247,.2), rgba(236,72,153,.15), transparent);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .contact-info p { margin: 10px 0; color: var(--muted); }
+    .contact-info a { color: var(--gold); font-weight: 700; }
+    .address { font-weight: 800; color: var(--text); font-size: 1.1rem; }
+    .contact-buttons { margin-top: 28px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    footer { border-top: 1px solid var(--border); text-align: center; padding: 26px 20px; color: var(--muted); font-size: 14px; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    /* ===== Внутренние «страницы» ===== */
+    .view { display: none; }
+    .view.active { display: block; }
+    .page-hero { padding: 60px 0 30px; text-align: center; }
+    .page-hero .big-emoji { font-size: 72px; margin-bottom: 12px; }
+    .page-hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 900; margin-bottom: 12px; }
+    .page-hero p { color: var(--muted); max-width: 560px; margin: 0 auto 26px; }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 40px 0; }
+    .step-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 26px; text-align: center; }
+    .step-card .num {
+      width: 46px; height: 46px; border-radius: 50%; margin: 0 auto 12px;
+      background: linear-gradient(135deg, var(--pink), var(--violet));
+      color: #fff; font-weight: 900; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 18px rgba(168, 85, 247, .35);
+    }
+    .step-card h3 { font-weight: 800; margin-bottom: 6px; font-size: 1rem; }
+    .step-card p { font-size: .88rem; color: var(--muted); }
+
+    .policy-content {
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 36px;
+      max-width: 860px; margin: 0 auto;
+    }
+    .policy-content h2 { font-size: 1.2rem; font-weight: 800; margin: 26px 0 10px; color: var(--violet); }
+    .policy-content h2:first-child { margin-top: 0; }
+    .policy-content p, .policy-content li { color: var(--muted); font-size: .95rem; margin-bottom: 8px; }
+    .policy-content ul { padding-left: 20px; list-style: disc; }
+
+    /* ===== Кнопка наверх ===== */
+    .to-top {
+      position: fixed; right: 22px; bottom: 88px;
+      width: 52px; height: 52px; border-radius: 50%; border: none;
+      background: linear-gradient(135deg, var(--pink), var(--violet));
+      color: #fff; font-size: 22px; cursor: pointer;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s, transform .2s; z-index: 1500;
+      box-shadow: 0 8px 22px rgba(168, 85, 247, .4);
+    }
+    .to-top.show { opacity: 1; pointer-events: auto; }
+    .to-top:hover { transform: translateY(-4px); }
+
+    /* ===== Липкая панель на телефоне ===== */
+    .mobile-bar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 1600;
+      display: none; gap: 10px;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(15, 16, 35, .9); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+    }
+    .mobile-bar .btn { flex: 1; padding: 13px 10px; font-size: .95rem; }
+
+    /* ===== Модальное окно ===== */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(5, 6, 18, .8); backdrop-filter: blur(6px);
+      display: none; align-items: center; justify-content: center;
+      z-index: 2000; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #181938; border: 1px solid var(--border);
+      border-radius: 24px; padding: 36px 30px;
+      max-width: 430px; width: 100%; position: relative;
+      animation: pop .3s ease; max-height: 92vh; overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+    }
+    @keyframes pop { from { transform: scale(.88); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .modal h3 { margin-bottom: 6px; text-align: center; font-size: 1.4rem; }
+    .modal .modal-sub { text-align: center; color: var(--muted); font-size: .9rem; margin-bottom: 20px; }
+    .modal label { display: block; margin-bottom: 6px; font-weight: 700; font-size: .9rem; color: var(--muted); }
+    .modal input, .modal textarea {
+      width: 100%; padding: 13px 15px; margin-bottom: 6px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border); border-radius: 12px;
+      color: var(--text);
+      font-size: 1rem; font-family: inherit;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .modal input::placeholder, .modal textarea::placeholder { color: rgba(255,255,255,.3); }
+    .modal input:focus, .modal textarea:focus {
+      outline: none; border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255,77,141,.15);
+    }
+    .modal .error { border-color: #e74c3c !important; }
+    .modal .error-msg { color: #ff7b6b; font-size: .82rem; margin: 2px 0 12px; display: none; }
+    .modal .btn { width: 100%; margin-top: 8px; }
+    .modal-close {
+      position: absolute; top: 14px; right: 16px;
+      background: var(--card); border: 1px solid var(--border);
+      width: 34px; height: 34px;
+      border-radius: 50%; font-size: 16px; cursor: pointer; color: var(--muted);
+    }
+    .modal-close:hover { color: var(--text); }
+
+    .reveal { opacity: 0; transform: translateY(34px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; padding: 12px 0; }
+      nav ul { justify-content: center; gap: 14px; }
+      .mobile-bar { display: flex; }
+      body { padding-bottom: 70px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <span class="balloon" style="left:4%;  animation-duration:15s;">🎈</span>
+  <span class="balloon" style="left:21%; animation-duration:19s; animation-delay:5s; font-size:26px;">🎈</span>
+  <span class="balloon" style="left:44%; animation-duration:13s; animation-delay:2s; font-size:44px;">🎉</span>
+  <span class="balloon" style="left:67%; animation-duration:17s; animation-delay:7s;">🎈</span>
+  <span class="balloon" style="left:89%; animation-duration:21s; animation-delay:1s; font-size:28px;">✨</span>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">Шары рядом 🎈</a>
+      <nav>
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="#privacy">Политика</a></li>
+        </ul>
+      </nav>
+      <span class="rating-badge">★ 4.8 · 103 оценки</span>
+    </div>
+  </header>
+
+  <!-- ================= ГЛАВНАЯ ================= -->
+  <div class="view active" id="view-home">
+
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="hero-kicker">🎈 Гелиевые шары в ТЦ «Золотая Нива», Новосибирск</span>
+        <h1>Превратим ваш праздник<br />в <span class="accent">сказку из шаров</span></h1>
+        <div class="handwritten">день рождения, выписка, корпоратив — и даже день в день!</div>
+        <p>Поможем подобрать композицию, привезём и установим вовремя. Розница и опт, оплата наличными, картой, переводом и по QR-коду.</p>
+        <div class="hero-buttons">
+          <button class="btn" onclick="openModal()">🎁 Заказать оформление</button>
+          <a href="https://wa.me/79994644940" target="_blank" rel="noopener" class="btn btn-outline">💬 Написать в WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat"><b>4.8</b><span>рейтинг в 2ГИС</span></div>
+          <div class="stat"><b>93</b><span>отзыва клиентов</span></div>
+          <div class="stat"><b>200</b><span>фото работ</span></div>
+          <div class="stat"><b>1,5 ч</b><span>было при срочном заказе</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Что мы <span class="accent">предлагаем</span></h2>
+        <p class="section-sub">Услуги праздничного оформления и товары для праздников</p>
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon">🎈</div>
+            <h3>Гелиевые шары</h3>
+            <p>Обычные, хром, с конфетти — на длинных лентах под потолок и в букетах.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">🎁</div>
+            <h3>Композиции и сувениры</h3>
+            <p>Оформление по вашим пожеланиям: дни рождения, выписки, девичники, юбилеи.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">🔢</div>
+            <h3>Цифры и надписи</h3>
+            <p>Воздушные цифры к годовщинам, шары с именем или фамилией — с выбором шрифта.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">🏢</div>
+            <h3>Оформление мероприятий</h3>
+            <p>Для праздников и бизнеса: корпоративы, рестораны. Розница и опт.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="pay-banner reveal">
+          <span>💳</span> Оплата: наличные · банковской картой · переводом · по QR-коду &nbsp;|&nbsp; <span>🚚</span> Есть доставка
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-title">Наши <span class="accent">работы</span></h2>
+        <p class="section-sub">Свежие работы и фото от клиентов — в нашей карточке 2ГИС</p>
+        <div class="gallery-cta reveal">
+          <div class="big-emoji">📷</div>
+          <h3>200 фотографий наших работ</h3>
+          <p>Откройте карточку в 2ГИС, вкладка «Фото» — реальные сеты, композиции и цифры, сделанные у нас</p>
+          <a href="https://2gis.ru/novosibirsk/firm/70000001029888129" target="_blank" rel="noopener" class="btn">Смотреть фото в 2ГИС →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <h2 class="section-title">Что говорят <span class="accent">клиенты</span></h2>
+        <p class="section-sub">Реальные отзывы с нашей карточки в 2ГИС</p>
+        <div class="reviews-grid">
+          <div class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>«Это лучшая компания в Новосибирске по оформлению мероприятий шарами. Всегда привозят всё вовремя! Качество шаров на высоте! Держатся 3–4 недели и больше!!!»</p>
+            <div class="author">Ольга Байбакова</div>
+          </div>
+          <div class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>«Заказывали накануне корпоратива 48 гелиевых шаров на длинных лентах под потолок и воздушные цифры. Сервис отличный — в WhatsApp утвердили детали, время доставки, всё чётко привезли.»</p>
+            <div class="author">Татьяна Letaya</div>
+          </div>
+          <div class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>«Спасибо за быструю доставку — произошла за 1,5 часа после оплаты. И спасибо большое за такую красивую композицию!»</p>
+            <div class="author">Ольга Гаврилюк</div>
+          </div>
+          <div class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>«Заказывал шары на выписку дочи, очень красиво и своевременно всё сделали! Вежливый персонал привезли, установили, распаковали! Обращайтесь смело!»</p>
+            <div class="author">Евгений</div>
+          </div>
+          <div class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>«Попросила самое раннее время — в итоге в 7:20 уже были у нас. Очень красиво!»</p>
+            <div class="author">Елена А.</div>
+          </div>
+          <div class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>«Заказали шары для двух ресторанов, для торжества. Выполняли заказ в срок. Композиции сделаны очень качественно. Обращаться будем только в данную компанию.»</p>
+            <div class="author">Егор Поклонов</div>
+          </div>
+        </div>
+        <div class="reviews-more">
+          <a href="https://2gis.ru/novosibirsk/firm/70000001029888129" target="_blank" rel="noopener" class="btn btn-outline">Читать все 93 отзыва в 2ГИС →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">Частые <span class="accent">вопросы</span></h2>
+        <p class="section-sub">Ответили на то, что спрашивают чаще всего</p>
+        <details class="faq-item reveal">
+          <summary>Можно ли заказать шары день в день?</summary>
+          <p class="faq-answer">Да. По отзывам наших клиентов композиции привозили уже через 1,5 часа после заказа, а один заказ был доставлен к 7:20 утра. Уточните срочность по телефону 8 (999) 464-49-40 или в WhatsApp.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Как долго летают гелиевые шары?</summary>
+          <p class="faq-answer">Обычный шар летает от нескольких часов до суток, но с обработкой специальным составом — 3–4 недели и дольше. Именно об этом пишут наши клиенты в отзывах. Обработку добавляем по запросу.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Можно заказать шары с именем или надписью?</summary>
+          <p class="faq-answer">Да, делаем шары с именем, фамилией и поздравительными надписями. Доступные шрифты и цвета уточняйте при заказе — пришлём варианты в WhatsApp.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Где вы находитесь и как работаете?</summary>
+          <p class="faq-answer">ТЦ «Золотая Нива», 1 этаж: ул. Бориса Богаткова, 239, павильон 134, Новосибирск. Есть доставка по городу.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Какие способы оплаты у вас есть?</summary>
+          <p class="faq-answer">Принимаем наличные, банковскую карту, перевод с карты на карту и оплату по QR-коду. Работаем в розницу и оптом.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="container">
+        <h2 class="section-title">Как нас <span class="accent">найти</span></h2>
+        <p class="section-sub">г. Новосибирск, ул. Бориса Богаткова, 239, ТЦ «Золотая Нива», павильон 134, 1 этаж</p>
+        <div class="map-wrap reveal">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=82.97752%2C55.038072&z=17&pt=82.97752,55.038072,pm2rdm"
+            title="Карта: Шары рядом, ТЦ Золотая Нива, Новосибирск"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="route-grid">
+          <div class="route-card reveal">
+            <div class="r-icon">🚇</div>
+            <h3>На метро</h3>
+            <p>Ближайшие станции — «Золотая нива» и «Берёзовая роща». От метро до ТЦ удобно дойти пешком.</p>
+          </div>
+          <div class="route-card reveal">
+            <div class="r-icon">🚌</div>
+            <h3>На автобусе</h3>
+            <p>Улица Бориса Богаткова — оживлённая магистраль: к ТЦ ходят автобусы и маршрутки из разных районов города.</p>
+          </div>
+          <div class="route-card reveal">
+            <div class="r-icon">🅿️</div>
+            <h3>На машине</h3>
+            <p>У ТЦ «Золотая Нива» есть собственная парковка. Ориентир — крупный торговый центр на пересечении с ул. Кошурникова.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+      <div class="container">
+        <h2 class="section-title">Приходите к нам! 🎈</h2>
+        <div class="contact-info">
+          <p>📍 ТЦ «Золотая Нива», 1 этаж</p>
+          <p class="address">г. Новосибирск, ул. Бориса Богаткова, 239, павильон 134</p>
+          <p>📞 <a href="tel:+79994644940">8 (999) 464-49-40</a> — звонок или WhatsApp</p>
+          <p>Работаем ежедневно с 10:00 до 20:00</p>
+        </div>
+        <div class="contact-buttons">
+          <button class="btn btn-white" onclick="openModal()">🎁 Заказать оформление</button>
+          <a href="https://wa.me/79994644940" target="_blank" rel="noopener" class="btn btn-wa">💬 Написать в WhatsApp</a>
+          <a href="tel:+79994644940" class="btn">📞 Позвонить</a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /view-home -->
+
+  <!-- ================= СТРАНИЦА «СПАСИБО» ================= -->
+  <div class="view" id="view-thanks">
+    <div class="breadcrumbs-wrap">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <a href="#">Главная</a><span class="sep">/</span><span>Спасибо за заявку</span>
+        </nav>
+      </div>
+    </div>
+    <section class="page-hero">
+      <div class="container">
+        <div class="big-emoji">🎉</div>
+        <h1>Спасибо! Заявка принята</h1>
+        <p id="thanksText">Менеджер «Шаров рядом» свяжется с вами в ближайшее время, уточнит детали и подтвердит заказ. Заявка также продублирована в WhatsApp.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn">← Вернуться на главную</a>
+          <a href="https://wa.me/79994644940" target="_blank" rel="noopener" class="btn btn-wa">💬 Открыть WhatsApp</a>
+        </div>
+      </div>
+    </section>
+    <section style="padding-top: 10px;">
+      <div class="container">
+        <div class="steps-grid">
+          <div class="step-card"><div class="num">1</div><h3>Мы связались</h3><p>Менеджер напишет в WhatsApp или позвонит по указанному номеру.</p></div>
+          <div class="step-card"><div class="num">2</div><h3>Уточнили детали</h3><p>Обсудим цвета, надписи, цифры и время доставки.</p></div>
+          <div class="step-card"><div class="num">3</div><h3>Собрали композицию</h3><p>Соберём заказ и, если нужно, обработаем шары для долгого полёта.</p></div>
+          <div class="step-card"><div class="num">4</div><h3>Доставили праздник</h3><p>Привезём и установим вовремя — как договаривались.</p></div>
+        </div>
+
+        <h2 class="section-title">Пока ждёте — <span class="accent">частые вопросы</span></h2>
+        <p class="section-sub">Ответы на то, что спрашивают чаще всего</p>
+        <details class="faq-item"><summary>Можно ли заказать шары день в день?</summary><p class="faq-answer">Да. Композиции привозили уже через 1,5 часа после заказа. Уточните срочность по телефону 8 (999) 464-49-40.</p></details>
+        <details class="faq-item"><summary>Сколько летают гелиевые шары?</summary><p class="faq-answer">Обычный шар — от нескольких часов до суток. С обработкой специальным составом — 3–4 недели и дольше.</p></details>
+        <details class="faq-item"><summary>Можно ли изменить заказ после отправки заявки?</summary><p class="faq-answer">Да, пока композиция не собрана — легко. Напишите в WhatsApp: поменяем цвета, надписи, количество шаров или время доставки.</p></details>
+        <details class="faq-item"><summary>Как оплатить заказ?</summary><p class="faq-answer">Наличными, банковской картой, переводом или по QR-коду — как удобно вам.</p></details>
+        <details class="faq-item"><summary>Можно ли забрать заказ самовывозом?</summary><p class="faq-answer">Конечно. Приходите в ТЦ «Золотая Нива», ул. Бориса Богаткова, 239, павильон 134 (1 этаж).</p></details>
+
+        <div class="hero-buttons" style="justify-content:center; margin-top: 30px;">
+          <a href="#faq" class="btn btn-outline">Ещё вопросы и ответы →</a>
+        </div>
+      </div>
+    </section>
+  </div><!-- /view-thanks -->
+
+  <!-- ================= СТРАНИЦА «ПОЛИТИКА» ================= -->
+  <div class="view" id="view-privacy">
+    <div class="breadcrumbs-wrap">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <a href="#">Главная</a><span class="sep">/</span><span>Политика конфиденциальности</span>
+        </nav>
+      </div>
+    </div>
+    <section class="page-hero" style="padding-bottom: 10px;">
+      <div class="container"><h1>Политика конфиденциальности</h1><p>Как мы обращаемся с данными, которые вы оставляете на сайте</p></div>
+    </section>
+    <section style="padding-top: 20px;">
+      <div class="container">
+        <div class="policy-content">
+          <!-- ⚠️ Перед публикацией впишите название ИП/ООО и ИНН -->
+          <p style="color:var(--muted); font-size:.85rem;">Редакция от 24.11.2026. Оператор персональных данных: ИП / ООО «______», ИНН ______.</p>
+          <h2>1. Общие положения</h2>
+          <p>Политика определяет порядок обработки персональных данных посетителей сайта «Шары рядом» в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+          <h2>2. Какие данные мы получаем</h2>
+          <p>Через форму заявки вы добровольно сообщаете:</p>
+          <ul>
+            <li>имя;</li>
+            <li>номер телефона;</li>
+            <li>комментарий к заказу.</li>
+          </ul>
+          <p>Сайт не запрашивает паспортные и платёжные данные.</p>
+          <h2>3. Цели обработки</h2>
+          <ul>
+            <li>связаться с вами для уточнения заказа;</li>
+            <li>согласовать состав композиции, сроки и доставку;</li>
+            <li>ответить на ваш вопрос.</li>
+          </ul>
+          <h2>4. Как данные передаются</h2>
+          <p>Отправляя заявку, вы попадаете в мессенджер WhatsApp по номеру магазина 8 (999) 464-49-40. Дальнейшая переписка происходит в мессенджере по правилам его сервиса. Сайт данные в базу не сохраняет.</p>
+          <h2>5. Cookie и аналитика</h2>
+          <p>Сайт использует cookie и сервис Google Analytics 4 для обезличенной статистики посещений. Эти данные не позволяют идентифицировать вас лично. Отключить cookie можно в настройках браузера.</p>
+          <h2>6. Ваши права</h2>
+          <p>Вы вправе запросить уточнение, блокирование или удаление своих данных. Напишите в WhatsApp на номер 8 (999) 464-49-40 с формулировкой «удалить мои данные» — выполним запрос в течение 30 дней.</p>
+          <h2>7. Изменения политики</h2>
+          <p>Мы можем обновлять политику. Актуальная редакция всегда на этой странице.</p>
+        </div>
+      </div>
+    </section>
+  </div><!-- /view-privacy -->
+
+  <!-- ================= СТРАНИЦА 404 ================= -->
+  <div class="view" id="view-404">
+    <div class="breadcrumbs-wrap">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <a href="#">Главная</a><span class="sep">/</span><span>Страница не найдена</span>
+        </nav>
+      </div>
+    </div>
+    <section class="page-hero" style="min-height: 70vh; display: flex; align-items: center;">
+      <div class="container">
+        <div class="big-emoji">🎈</div>
+        <h1>404 — этот шарик улетел</h1>
+        <p>Страницы по этому адресу нет, зато праздник ждёт на главной. Загляните туда или напишите нам — подберём композицию за пару сообщений.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn">← На главную</a>
+          <a href="https://wa.me/79994644940" target="_blank" rel="noopener" class="btn btn-wa">💬 Написать в WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </div><!-- /view-404 -->
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Шары рядом · Гелиевые шары и праздничное оформление, Новосибирск</p>
+      <p>
+        <a href="#privacy">Политика конфиденциальности</a> ·
+        <a href="#demo404">Страница 404 (демо)</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Модальное окно заказа -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3>Заказать оформление 🎈</h3>
+      <p class="modal-sub">Оставьте контакты — заявка сразу уйдёт менеджеру</p>
+      <form id="orderForm" novalidate>
+        <label for="custName">Ваше имя</label>
+        <input type="text" id="custName" placeholder="Например, Анна" required />
+        <div class="error-msg" id="nameError">Пожалуйста, укажите имя</div>
+
+        <label for="custPhone">Номер телефона</label>
+        <input type="tel" id="custPhone" placeholder="+7 (999) 000-00-00" required />
+        <div class="error-msg" id="phoneError">Введите корректный номер, например +7 999 000-00-00</div>
+
+        <label for="custComment">Что нужно оформить?</label>
+        <textarea id="custComment" rows="3" placeholder="Например: сет на день рождения дочки 15 марта"></textarea>
+
+        <button type="submit" class="btn">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+  <div class="mobile-bar">
+    <button class="btn" onclick="openModal()">🎁 Заказать</button>
+    <a href="https://wa.me/79994644940" target="_blank" rel="noopener" class="btn btn-wa">💬 WhatsApp</a>
+  </div>
+
+  <!-- Google Analytics 4: замените G-XXXXXXXXXX на свой идентификатор из analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <script>
+    /* ===== Простая маршрутизация «страниц» внутри одного файла =====
+       #          — главная
+       #services, #reviews, #faq, #map, #contacts — разделы главной
+       #thanks    — страница «Спасибо»
+       #privacy   — политика конфиденциальности
+       #demo404   — демонстрация страницы 404
+       любой другой #хэш — настоящая 404
+    */
+    const knownSections = ['home','services','gallery','reviews','faq','map','contacts'];
+    let customerName = '';
+
+    function showView(id) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function router() {
+      const hash = decodeURIComponent(window.location.hash.replace('#', ''));
+
+      if (hash === 'thanks') {
+        if (customerName) {
+          document.getElementById('thanksText').textContent =
+            customerName + ', спасибо за заявку! Менеджер «Шаров рядом» свяжется с вами в ближайшее время, уточнит детали и подтвердит заказ.';
+        }
+        showView('view-thanks');
+        window.scrollTo({ top: 0 });
+        return;
+      }
+      if (hash === 'privacy' || hash === 'demo404') {
+        showView(hash === 'privacy' ? 'view-privacy' : 'view-404');
+        window.scrollTo({ top: 0 });
+        return;
+      }
+      if (hash === '' || knownSections.includes(hash)) {
+        showView('view-home');
+        const anchor = hash ? document.getElementById(hash) : null;
+        if (anchor) anchor.scrollIntoView({ behavior: 'smooth' });
+        else window.scrollTo({ top: 0 });
+        return;
+      }
+      // неизвестный адрес — показываем 404
+      showView('view-404');
+      window.scrollTo({ top: 0 });
+    }
+    window.addEventListener('hashchange', router);
+    router();
+
+    /* ===== Модальное окно ===== */
+    const modal = document.getElementById('orderModal');
+    function openModal() {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('custName').focus(), 100);
+    }
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    /* ===== Валидация: после успеха — WhatsApp + страница «Спасибо» ===== */
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nameInput  = document.getElementById('custName');
+      const phoneInput = document.getElementById('custPhone');
+      const comment    = document.getElementById('custComment').value.trim();
+      const nameError  = document.getElementById('nameError');
+      const phoneError = document.getElementById('phoneError');
+
+      let valid = true;
+      nameInput.classList.remove('error'); phoneInput.classList.remove('error');
+      nameError.style.display = 'none'; phoneError.style.display = 'none';
+
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+
+      if (name.length < 2) { nameInput.classList.add('error'); nameError.style.display = 'block'; valid = false; }
+
+      const phoneRe = /^(\+7|8)[\s(-]*\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}$/;
+      if (!phoneRe.test(phone)) { phoneInput.classList.add('error'); phoneError.style.display = 'block'; valid = false; }
+
+      if (!valid) return;
+
+      // Заявка уходит менеджеру в WhatsApp
+      const text = 'Здравствуйте! Меня зовут ' + name +
+        '. Хочу заказать шары.' +
+        (comment ? ' ' + comment : '') +
+        ' Мой номер: ' + phone;
+      window.open('https://wa.me/79994644940?text=' + encodeURIComponent(text), '_blank');
+
+      // Клиент попадает на страницу «Спасибо» с его именем
+      customerName = name;
+      closeModal();
+      window.location.hash = 'thanks';
+    });
+
+    /* ===== Появление блоков при скролле ===== */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ===== Кнопка наверх ===== */
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.classList.toggle('show', window.scrollY > 600);
+    });
+  </script>
+</body>
+</html>
